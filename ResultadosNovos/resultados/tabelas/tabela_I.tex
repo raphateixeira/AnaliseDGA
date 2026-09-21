@@ -1,0 +1,27 @@
+% Gerado automaticamente por benchmark_dga.py — não editar à mão.
+% Acurácia balanceada: média da revocação por classe (compensa o desbalanceamento 65\%/22\%/13\%).
+% Taxa de indeterminação: fração de amostras sem diagnóstico definido (0 para os métodos de AM).
+\begin{table}[htbp]
+\centering
+\caption{Desempenho global por método (média $\pm$ desvio-padrão entre 5 repetições de CV externa de 10 folds, agrupada por composição de gases).}
+\begin{tabular}{lrrrrrrr}
+\toprule
+ & acuracia\_media & acuracia\_desvio & acuracia\_balanceada\_media & acuracia\_balanceada\_desvio & f1\_macro\_media & f1\_macro\_desvio & taxa\_indeterminacao\_media \\
+modelo &  &  &  &  &  &  &  \\
+\midrule
+Duval & 0.283400 & 0.000000 & 0.497600 & 0.000000 & 0.289900 & 0.000000 & 0.052400 \\
+Rogers & 0.236000 & 0.000000 & 0.395700 & 0.000000 & 0.333700 & 0.000000 & 0.423200 \\
+GasChave & 0.535900 & 0.000000 & 0.623600 & 0.000000 & 0.517900 & 0.000000 & 0.000000 \\
+Doernenburg & 0.708600 & 0.000000 & 0.545600 & 0.000000 & 0.660000 & 0.000000 & 0.226000 \\
+IEC60599 & 0.254500 & 0.000000 & 0.429600 & 0.000000 & 0.350000 & 0.000000 & 0.414700 \\
+LR & 0.893300 & 0.002100 & 0.909100 & 0.002500 & 0.874300 & 0.002400 & 0.000000 \\
+SVM & 0.919200 & 0.015100 & 0.922600 & 0.008600 & 0.901400 & 0.015500 & 0.000000 \\
+KNN & 0.945500 & 0.001300 & 0.918400 & 0.003500 & 0.927100 & 0.001200 & 0.000000 \\
+ANN & 0.932300 & 0.003800 & 0.898900 & 0.005700 & 0.911700 & 0.004700 & 0.000000 \\
+HistGB & 0.953500 & 0.002800 & 0.931200 & 0.004400 & 0.936700 & 0.003700 & 0.000000 \\
+SVM\_5gases & 0.918800 & 0.018300 & 0.918800 & 0.012300 & 0.900400 & 0.020100 & 0.000000 \\
+KNN\_estend & 0.940000 & 0.004200 & 0.908100 & 0.002700 & 0.920300 & 0.005000 & 0.000000 \\
+\bottomrule
+\end{tabular}
+
+\end{table}

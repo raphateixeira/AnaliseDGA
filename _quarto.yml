@@ -2,7 +2,9 @@ project:
   type: website
   output-dir: docs
   resources:
-    - DataSetDGA.xlsx
+    - DataSet/DataSetDGA.xlsx
+    - Publicacoes/Dissertacao_Otacilio.pdf
+    - Publicacoes/Artigo_PPCA_DGA.pdf
 
 website:
   title: "AnaliseDGA"

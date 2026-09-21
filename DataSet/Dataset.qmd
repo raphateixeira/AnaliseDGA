@@ -6,7 +6,7 @@ subtitle: "Conjunto de dados de gases dissolvidos em óleo (DGA) de transformado
 Conjunto de dados de Análise de Gases Dissolvidos (DGA — *Dissolved Gas
 Analysis*) em óleo isolante de transformadores de potência, usado para
 diagnóstico de faltas incipientes. Base usada para treinar e avaliar o
-[sistema de diagnóstico inteligente](index.qmd) deste repositório.
+[sistema de diagnóstico inteligente](../index.qmd) deste repositório.
 
 Migrado do antigo repositório `Dataset-DGA`.
 

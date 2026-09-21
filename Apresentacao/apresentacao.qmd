@@ -1,0 +1,129 @@
+---
+title: "Diagnóstico Inteligente de Faltas em Transformadores por DGA"
+subtitle: "Comparação: Resultados do Mestrado × Novos Resultados"
+author:
+  - "Otacílio Rodrigues Oliveira Filho"
+  - "Orientador: Prof. Dr. Raphael Barros Teixeira"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    lang: pt-BR
+    toc: false
+execute:
+  enabled: false
+---
+
+## Objetivo
+
+Diagnóstico de faltas incipientes em transformadores de potência a partir da
+**Análise de Gases Dissolvidos** (DGA) em óleo isolante, usando classificadores
+de aprendizado de máquina.
+
+- Dissertação de mestrado ([UFPA](https://repositorio.ufpa.br/items/eeecc00f-702c-453c-968a-867779a14a70)): métodos **KNN**, **RNA** e **DUVAL**.
+- Este trabalho: revisitar o mesmo problema com **novos modelos**, comparando
+  resultados sobre o mesmo conjunto de dados.
+
+## Contexto — DGA
+
+A Análise de Gases Dissolvidos identifica falhas incipientes a partir das
+concentrações de gases característicos formados pela degradação do óleo
+isolante:
+
+- **H2** (hidrogênio), **CH4** (metano), **C2H4** (etileno), **C2H6** (etano), **C2H2** (acetileno)
+
+Classes de diagnóstico (padrão IEEE C57.104 / IEC 60599):
+
+- **NO** — normal
+- **T1 / T2 / T3** — falhas térmicas (temperatura crescente)
+- **D1 / D2** — descargas de baixa / alta energia
+- **PD** — descarga parcial
+
+## Dataset
+
+[`DataSet/DataSetDGA.xlsx`](../DataSet/Dataset.qmd) — **2004 amostras**, sem valores nulos.
+
+| Rótulo | Contagem |
+|---|---|
+| NO | 1295 |
+| T2 | 190 |
+| T3 | 183 |
+| D2 | 96 |
+| PD | 91 |
+| D1 | 80 |
+| T1 | 69 |
+
+Distribuição desbalanceada: classe **NO** concentra ~65% das amostras.
+
+## Metodologia — Mestrado
+
+Notebooks em [`ResultadosMestrado/`](../ResultadosMestrado/):
+
+- **KNN** ([`Knn.ipynb`](../ResultadosMestrado/Knn.html)) — busca de `k` ótimo, `KNeighborsClassifier` (scikit-learn), modelo serializado em `knn_DGA.sav`.
+- **RNA** ([`RNA.ipynb`](../ResultadosMestrado/RNA.html)) — rede densa (Keras/TensorFlow), ativação `selu`, `GridSearchCV` para tuning, modelo serializado em `meuRnn.pkl`.
+- **DUVAL** — método clássico de triângulo/pentágono, usado como referência ([`SistemaDiagnosticoInteligente.ipynb`](../ResultadosMestrado/SistemaDiagnosticoInteligente.html)).
+
+## Resultados — Mestrado (KNN)
+
+Extraído da saída salva de [`Knn.ipynb`](../ResultadosMestrado/Knn.html):
+
+```
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.97       442
+           1       0.94      0.91      0.93       129
+           2       0.95      0.87      0.91        91
+
+    accuracy                           0.96       662
+```
+
+**Acurácia geral: 96%**
+
+## Resultados — Mestrado (RNA)
+
+Extraído da saída salva de [`RNA.ipynb`](../ResultadosMestrado/RNA.html):
+
+- Treinamento: 100 épocas, `categorical_accuracy` final ≈ **91.7%** (treino)
+- Avaliação no conjunto de teste: `categorical_accuracy` ≈ **94.8%**
+
+## Metodologia — Novos Resultados
+
+::: {.callout-note}
+Seção a preencher conforme os novos modelos forem desenvolvidos em
+[`ResultadosNovos/`](../ResultadosNovos/).
+:::
+
+- Algoritmo(s): _a definir_
+- Pré-processamento: _a definir_
+- Estratégia de validação: _a definir_ (ex.: k-fold, balanceamento de classes)
+
+## Resultados — Novos Resultados
+
+::: {.callout-note}
+_A preencher com métricas dos novos modelos (accuracy, precision/recall por
+classe, matriz de confusão, kappa)._
+:::
+
+## Comparação — Mestrado × Novos
+
+| Métrica | Mestrado (KNN) | Mestrado (RNA) | Novo modelo |
+|---|---|---|---|
+| Acurácia | 96% | ~94.8% | _a preencher_ |
+| Precisão macro | 0.95 | — | _a preencher_ |
+| Recall macro | 0.92 | — | _a preencher_ |
+| Observações | 3 classes agrupadas | 100 épocas | _a preencher_ |
+
+## Conclusões e Próximos Passos
+
+- Os modelos do mestrado alcançaram acurácia entre ~95–96% com poucas classes agrupadas.
+- Próximos passos:
+  1. Treinar novos modelos em [`ResultadosNovos/`](../ResultadosNovos/) sobre as **7 classes originais** (não agrupadas).
+  2. Tratar o desbalanceamento de classes (ex.: `NO` domina ~65% dos dados).
+  3. Atualizar esta apresentação com os resultados obtidos.
+
+## Referências
+
+- Dissertação completa: [`Dissertacao_Otacilio.pdf`](../Publicacoes/Dissertacao_Otacilio.pdf)
+- Artigo (PPCA, a submeter): [`Artigo_PPCA_DGA.pdf`](../Publicacoes/Artigo_PPCA_DGA.pdf)
+- Repositório UFPA: <https://repositorio.ufpa.br/items/eeecc00f-702c-453c-968a-867779a14a70>
+- Dataset: [`DataSet/Dataset.qmd`](../DataSet/Dataset.qmd)

@@ -1,0 +1,174 @@
+=== Teste com casos canônicos (Tabela-2 da dissertação) ===
+
+Caso                  Duval1        Rogers        GasChave      Doernenburg   IEC60599      
+Normal (Tabela-2)     T             T             normal        T             T             
+  esperado: Duval indica falha mesmo sendo normal; Rogers/Doernenburg: térmica; Gás chave: normal
+Falha T3 (Tabela-2)   T             T             T             T             T             
+  esperado: Duval: T3; Rogers: térmica T<700 (subestima); Doernenburg: térmica; IEC 60599: térmica T<700 (300-700°C); Gás chave: térmica
+
+=== Carregando dados ===
+2004 amostras | classes: {'normal': 1295, 'T': 442, 'D': 267}
+
+=== Avaliando todos os modelos (CV externa: 10 folds x 5 repetições, agrupada por composição de gases) ===
+  [repeticao 1/5] Duval: concluido
+  [repeticao 1/5] Rogers: concluido
+  [repeticao 1/5] GasChave: concluido
+  [repeticao 1/5] Doernenburg: concluido
+  [repeticao 1/5] IEC60599: concluido
+  [repeticao 1/5] LR: concluido
+  [repeticao 1/5] SVM: concluido
+  [repeticao 1/5] KNN: concluido
+  [repeticao 1/5] ANN: concluido
+  [repeticao 1/5] HistGB: concluido
+  [repeticao 1/5] SVM_5gases: concluido
+  [repeticao 1/5] KNN_estend: concluido
+  [repeticao 2/5] Duval: concluido
+  [repeticao 2/5] Rogers: concluido
+  [repeticao 2/5] GasChave: concluido
+  [repeticao 2/5] Doernenburg: concluido
+  [repeticao 2/5] IEC60599: concluido
+  [repeticao 2/5] LR: concluido
+  [repeticao 2/5] SVM: concluido
+  [repeticao 2/5] KNN: concluido
+  [repeticao 2/5] ANN: concluido
+  [repeticao 2/5] HistGB: concluido
+  [repeticao 2/5] SVM_5gases: concluido
+  [repeticao 2/5] KNN_estend: concluido
+  [repeticao 3/5] Duval: concluido
+  [repeticao 3/5] Rogers: concluido
+  [repeticao 3/5] GasChave: concluido
+  [repeticao 3/5] Doernenburg: concluido
+  [repeticao 3/5] IEC60599: concluido
+  [repeticao 3/5] LR: concluido
+  [repeticao 3/5] SVM: concluido
+  [repeticao 3/5] KNN: concluido
+  [repeticao 3/5] ANN: concluido
+  [repeticao 3/5] HistGB: concluido
+  [repeticao 3/5] SVM_5gases: concluido
+  [repeticao 3/5] KNN_estend: concluido
+  [repeticao 4/5] Duval: concluido
+  [repeticao 4/5] Rogers: concluido
+  [repeticao 4/5] GasChave: concluido
+  [repeticao 4/5] Doernenburg: concluido
+  [repeticao 4/5] IEC60599: concluido
+  [repeticao 4/5] LR: concluido
+  [repeticao 4/5] SVM: concluido
+  [repeticao 4/5] KNN: concluido
+  [repeticao 4/5] ANN: concluido
+  [repeticao 4/5] HistGB: concluido
+  [repeticao 4/5] SVM_5gases: concluido
+  [repeticao 4/5] KNN_estend: concluido
+  [repeticao 5/5] Duval: concluido
+  [repeticao 5/5] Rogers: concluido
+  [repeticao 5/5] GasChave: concluido
+  [repeticao 5/5] Doernenburg: concluido
+  [repeticao 5/5] IEC60599: concluido
+  [repeticao 5/5] LR: concluido
+  [repeticao 5/5] SVM: concluido
+  [repeticao 5/5] KNN: concluido
+  [repeticao 5/5] ANN: concluido
+  [repeticao 5/5] HistGB: concluido
+  [repeticao 5/5] SVM_5gases: concluido
+  [repeticao 5/5] KNN_estend: concluido
+
+=== Calculando métricas agregadas ===
+             acuracia_media  ...  f1_macro_media
+modelo                       ...                
+Duval                0.2834  ...          0.2899
+Rogers               0.2360  ...          0.3337
+GasChave             0.5359  ...          0.5179
+Doernenburg          0.7086  ...          0.6600
+IEC60599             0.2545  ...          0.3500
+LR                   0.8933  ...          0.8743
+SVM                  0.9192  ...          0.9014
+KNN                  0.9455  ...          0.9271
+ANN                  0.9323  ...          0.9117
+HistGB               0.9535  ...          0.9367
+SVM_5gases           0.9188  ...          0.9004
+KNN_estend           0.9400  ...          0.9203
+
+[12 rows x 4 columns]
+
+=== Testes estatísticos pareados (repetição 0) ===
+   modelo_a    modelo_b       p_valor  so_a_acerta  so_b_acerta  p_valor_holm
+   IEC60599      HistGB  0.000000e+00           32         1430  0.000000e+00
+   IEC60599  SVM_5gases  0.000000e+00           33         1348  0.000000e+00
+   IEC60599          LR  0.000000e+00           28         1313  0.000000e+00
+   IEC60599         ANN  0.000000e+00           59         1407  0.000000e+00
+     Rogers  KNN_estend  0.000000e+00           42         1455  0.000000e+00
+     Rogers  SVM_5gases  0.000000e+00           37         1389  0.000000e+00
+     Rogers         ANN  0.000000e+00           54         1439  0.000000e+00
+     Rogers         KNN  0.000000e+00           26         1450  0.000000e+00
+     Rogers         SVM  0.000000e+00           29         1381  0.000000e+00
+     Rogers          LR  0.000000e+00           22         1344  0.000000e+00
+   IEC60599  KNN_estend  0.000000e+00           41         1417  0.000000e+00
+     Rogers      HistGB  0.000000e+00           31         1466  0.000000e+00
+      Duval  KNN_estend  0.000000e+00           48         1366  0.000000e+00
+      Duval  SVM_5gases  0.000000e+00           42         1299  0.000000e+00
+      Duval      HistGB  0.000000e+00           40         1380  0.000000e+00
+      Duval         KNN  0.000000e+00           34         1363  0.000000e+00
+   IEC60599         KNN  0.000000e+00           25         1412  0.000000e+00
+      Duval         SVM  0.000000e+00           37         1294  0.000000e+00
+      Duval          LR  0.000000e+00           35         1262  0.000000e+00
+   IEC60599         SVM  0.000000e+00           29         1344  0.000000e+00
+      Duval         ANN 7.953268e-311           70         1360 3.658503e-309
+   GasChave      HistGB 1.677599e-199           48          882 7.549194e-198
+   GasChave         KNN 6.236407e-188           61          884 2.744019e-186
+   GasChave  KNN_estend 8.292034e-181           68          880 3.565574e-179
+   GasChave         ANN 1.479809e-170           73          857 6.215198e-169
+   GasChave         SVM 8.320865e-157           83          834 3.411555e-155
+     Rogers Doernenburg 9.425092e-153          232         1179 3.770037e-151
+   GasChave  SVM_5gases 3.495548e-152           93          844 1.363264e-150
+   GasChave          LR 9.057767e-141          102          823 3.441952e-139
+Doernenburg    IEC60599 4.058340e-138         1169          259 1.501586e-136
+Doernenburg      HistGB 4.821375e-121           23          511 1.735695e-119
+Doernenburg         KNN 3.473989e-117           24          501 1.215896e-115
+      Duval Doernenburg 4.697634e-115          315         1167 1.597196e-113
+Doernenburg  KNN_estend 7.540522e-115           23          489 2.488372e-113
+Doernenburg         ANN 2.879826e-106           24          462 9.215444e-105
+     Rogers    GasChave  1.603377e-85          201          802  4.970470e-84
+   GasChave    IEC60599  2.538132e-73          793          229  7.614395e-72
+Doernenburg         SVM  1.272213e-72           77          482  3.689416e-71
+Doernenburg  SVM_5gases  1.272213e-72           77          482  3.689416e-71
+      Duval    GasChave  6.754632e-62          233          739  1.823751e-60
+Doernenburg          LR  1.141389e-56          112          487  2.967610e-55
+   GasChave Doernenburg  7.024204e-26          374          720  1.756051e-24
+         LR      HistGB  3.824020e-17           38          151  9.177648e-16
+      Duval      Rogers  3.147439e-14          129           34  7.239110e-13
+     HistGB  SVM_5gases  1.044256e-12          112           29  2.297364e-11
+         LR         KNN  1.471808e-12           55          157  3.090798e-11
+      Duval    IEC60599  1.807741e-12           66            8  3.615482e-11
+        SVM      HistGB  1.435744e-11           36          119  2.727913e-10
+         LR  KNN_estend  8.212098e-10           65          156  1.478178e-08
+        KNN  SVM_5gases  4.372592e-09          112           40  7.433406e-08
+        SVM         KNN  1.758433e-08           46          118  2.813493e-07
+ SVM_5gases  KNN_estend  1.250637e-06           48          109  1.875956e-05
+         LR         ANN  4.210927e-06           61          124  5.895298e-05
+        ANN      HistGB  5.732970e-06           35           85  7.452861e-05
+        SVM  KNN_estend  6.004495e-06           59          120  7.452861e-05
+     Rogers    IEC60599  5.701181e-04           37           74  6.271299e-03
+        KNN         ANN  8.320421e-04           85           46  8.320421e-03
+         LR  SVM_5gases  5.890173e-03           41           71  5.301156e-02
+        ANN  SVM_5gases  6.434811e-03           86           53  5.301156e-02
+         LR         SVM  6.351624e-03           42           72  5.301156e-02
+        SVM         ANN  9.932668e-03           61           94  5.959601e-02
+        ANN  KNN_estend  1.843057e-02           52           80  9.215286e-02
+     HistGB  KNN_estend  3.895793e-02           63           41  1.558317e-01
+        KNN  KNN_estend  1.770014e-01           33           22  5.310041e-01
+        KNN      HistGB  2.722689e-01           36           47  5.445379e-01
+        SVM  SVM_5gases  1.000000e+00           52           52  1.000000e+00/Users/raphateixeira/GitRTx/AnaliseDGA/ResultadosNovos/benchmark_dga.py:798: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+  ax.set_xticklabels(modelos, rotation=45, ha="right")
+
+
+=== Exportando tabelas e figuras ===
+Saída em: /Users/raphateixeira/GitRTx/AnaliseDGA/ResultadosNovos/resultados
+
+=== Ablação: representação básica (5 gases) vs estendida (+razões +percentuais) ===
+            acuracia_media  ...                par
+modelo                      ...                   
+KNN                 0.9455  ...  KNN vs KNN_estend
+KNN_estend          0.9400  ...  KNN vs KNN_estend
+SVM_5gases          0.9188  ...  SVM_5gases vs SVM
+SVM                 0.9192  ...  SVM_5gases vs SVM
+
+[4 rows x 4 columns]

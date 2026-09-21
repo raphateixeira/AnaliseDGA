@@ -6,29 +6,47 @@ author:
   - "Orientador: Prof. Dr. Raphael Barros Teixeira"
 ---
 
-Sistema de diagnóstico inteligente de faltas em transformadores de potência
-baseado na Análise de Gases Dissolvidos em óleo (DGA), utilizando os métodos
-ANN (Redes Neurais Artificiais), KNN (k-vizinhos mais próximos) e DUVAL.
+Sistema de diagnóstico inteligente de faltas em transformadores de potência baseado na Análise de Gases Dissolvidos em óleo (DGA), utilizando os métodos ANN (Redes Neurais Artificiais), KNN (k-vizinhos mais próximos) e DUVAL.
 Trabalho da dissertação de mestrado de Otacílio Rodrigues Oliveira Filho
-([ver publicação](https://raphateixeira.github.io/Publicacoes/)), usando como
-base o [Dataset DGA](Dataset.qmd) (2004 amostras), incluído neste mesmo
+([ver publicação na UFPA](https://repositorio.ufpa.br/items/eeecc00f-702c-453c-968a-867779a14a70) |
+[PDF](Publicacoes/Dissertacao_Otacilio.pdf)), usando como
+base o [Dataset DGA](DataSet/Dataset.qmd) (2004 amostras), incluído neste mesmo
 repositório.
+
+O repositório está organizado em quatro partes:
+
+* [`ResultadosMestrado/`](#resultados-do-mestrado) — código e modelos originais da dissertação.
+* [`ResultadosNovos/`](#resultados-novos) — novos modelos, em desenvolvimento.
+* [`DataSet/`](DataSet/Dataset.qmd) — dados brutos (DGA) usados em ambos.
+* [`Publicacoes/`](#publicações) — dissertação e artigo relacionados.
+
+Veja também a [apresentação comparativa](Apresentacao/apresentacao.html) entre os
+resultados do mestrado e os novos resultados.
+
+## Resultados do mestrado
 
 Os notebooks abaixo foram desenvolvidos no Google Colab (com acesso a dados
 via Google Drive) — as páginas exibem os resultados já obtidos na época,
 sem reexecução.
 
-## Conteúdo
+* [Sistema de Diagnóstico Inteligente — visão geral](ResultadosMestrado/SistemaDiagnosticoInteligente.html) — carregamento dos algoritmos ANN, KNN e DUVAL.
+* [Classificação por KNN](ResultadosMestrado/Knn.html)
+* [Classificação por Rede Neural Artificial (RNA)](ResultadosMestrado/RNA.html)
 
-* [Sistema de Diagnóstico Inteligente — visão geral](SistemaDiagnosticoInteligente.html) — carregamento dos algoritmos ANN, KNN e DUVAL.
-* [Classificação por KNN](Knn.html)
-* [Classificação por Rede Neural Artificial (RNA)](RNA.html)
+### Modelos treinados
 
-## Modelos treinados
+* [`knn_DGA.sav`](ResultadosMestrado/knn_DGA.sav) — modelo KNN serializado (scikit-learn).
+* [`meuRnn.pkl`](ResultadosMestrado/meuRnn.pkl) — modelo de rede neural serializado.
 
-* `knn_DGA.sav` — modelo KNN serializado (scikit-learn).
-* `meuRnn.pkl` — modelo de rede neural serializado.
+## Resultados novos
+
+Em desenvolvimento — ver [`ResultadosNovos/README.md`](https://github.com/raphateixeira/AnaliseDGA/tree/main/ResultadosNovos).
 
 ## Dados
 
-* [Dataset DGA](Dataset.qmd) — conjunto de dados de gases dissolvidos em óleo usado para treinar e avaliar os modelos acima (migrado do antigo repositório `Dataset-DGA`).
+* [Dataset DGA](DataSet/Dataset.qmd) — conjunto de dados de gases dissolvidos em óleo usado para treinar e avaliar os modelos acima (migrado do antigo repositório `Dataset-DGA`).
+
+## Publicações
+
+* [Dissertação de mestrado](Publicacoes/Dissertacao_Otacilio.pdf) — texto completo ([repositório UFPA](https://repositorio.ufpa.br/items/eeecc00f-702c-453c-968a-867779a14a70)).
+* [Artigo (PPCA)](Publicacoes/Artigo_PPCA_DGA.pdf) — artigo derivado da dissertação, a ser submetido.
