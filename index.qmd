@@ -6,6 +6,8 @@ author:
   - "Orientador: Prof. Dr. Raphael Barros Teixeira"
 ---
 
+[⬅ Site principal](https://raphateixeira.github.io)
+
 Sistema de diagnóstico inteligente de faltas em transformadores de potência baseado na Análise de Gases Dissolvidos em óleo (DGA), utilizando os métodos ANN (Redes Neurais Artificiais), KNN (k-vizinhos mais próximos) e DUVAL.
 Trabalho da dissertação de mestrado de Otacílio Rodrigues Oliveira Filho
 ([ver publicação na UFPA](https://repositorio.ufpa.br/items/eeecc00f-702c-453c-968a-867779a14a70) |
