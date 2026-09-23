@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: _site
   resources:
     - DataSet/DataSetDGA.xlsx
     - Publicacoes/Dissertacao_Otacilio.pdf
